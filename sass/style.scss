@@ -3,6 +3,7 @@
 
 $primary_color : #06BBCC;
 $secondary_color : #d2d5d8;
+$third_color : #b0b3b7;
 $nav : #000;
 
 
@@ -31,6 +32,8 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    transition: .3s;
+
 
     .toggle{
 
@@ -43,6 +46,11 @@ header{
         i{
             font-size: 30px;
         }
+    }
+
+    .toggle2{
+        @extend .toggle;
+        display: none;
     }
 
     .social{
@@ -61,6 +69,23 @@ header{
             background-color: $secondary_color;
         }
     }
+    .site{
+        display: flex;
+        display: none;
+        gap: 10px;
+        align-items: center;
+        justify-content: center;
+
+        .icon-site{
+            font-size: 30px;
+        }
+
+        .name h1 a{
+            color: $primary_color;
+            font-size: 30px;
+            text-decoration: none;
+        }
+    }
 
 }
 aside{
@@ -72,6 +97,8 @@ aside{
     margin: 0;
     top: 0;
     background-color: white;
+    transition: .7s;
+
 
     .site{
         display: flex;
@@ -122,7 +149,7 @@ aside{
 
     .guide{
         position: relative;
-        top: 290px;
+        top: 190px;
 
         a{
            border: 1px solid black;
@@ -140,6 +167,8 @@ main{
     padding-top: 100px;
     border: none;
     background-color: $secondary_color;
+    transition: .3s;
+
 
         .presentation{
             display: flex;
@@ -233,12 +262,157 @@ footer{
         a{
             color: #000;
 
-            margin-right: 50px;
+            margin-right: 10%;
             
             &:hover{
                 color: white;
             }
 
         }
+    }
+}
+
+
+@media only screen and (max-width : 1150px){
+    aside{
+        display: none;
+        transition: .7s;
+    }
+    header{
+        width: calc(100% - 35px);
+        margin: 0 0 0 0;
+        transition: .7s;
+        
+        .toggle{
+            display: none;
+        }
+        .toggle2{
+            display: block;
+            transition: .7s;
+        }
+        .site{
+            display: flex;
+        }
+        .social{
+            display: none;
+        }
+    }
+
+    main{
+        width: calc(100% - 40px);
+        margin: 0;
+
+        // padding-top: 150px;
+        // .presentation{
+        //     display: flex;
+        //     flex-direction: column;
+        //     justify-content: space-between;
+        //     align-items: center;
+        //     background-color: $third_color;
+        //     margin: -75px -20px 0 -20px;
+        //     padding: 75px 20px 40px 20px;
+
+
+        //     .logo{
+        //         img{
+        //             width: 500px;
+        //         }
+        //     }
+        //     .description{
+        //         font-size: 40px;
+        //         max-width: 600px;
+        //     }
+        // }
+         .categorie{
+
+            .cat{
+                flex-direction: column;
+                gap: 20px;
+                align-items: center;
+            }
+        }
+    }
+
+}
+
+.hide-aside{
+    display: none;
+    transition: .7s;
+
+}
+.show-aside{
+    display: block;
+    transition: .7s;
+    height: 100vh;
+}
+.resize-header{
+    width: calc(100% - 35px);
+    margin: 0 0 0 0;
+    transition: .7s;
+
+}
+
+.resize-main{
+    width: calc(100% - 40px);
+    margin: 0;
+    transition: .7s;
+}
+
+@media only screen and (max-width : 800px){
+    main{
+        width: calc(100% - 40px);
+        margin: 0;
+
+        padding-top: 150px;
+        .presentation{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            //background-color: $third_color;
+            margin: -75px -20px 0 -20px;
+            padding: 75px 20px 40px 20px;
+
+
+           .logo{
+                img{
+                    width: 400px;
+                }
+            }
+            .description{
+               font-size: 40px;
+               max-width: 600px;
+            }
+         }
+         .categorie{
+
+            .cat{
+                flex-direction: column;
+                gap: 20px;
+                align-items: center;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width : 500px){
+    main{
+
+        width: calc(100% - 40px);
+        margin: 0;
+
+        .logo{
+            img{
+                width: 350px !important;
+            }
+        }
+        .description{
+           font-size: 30px !important;
+           max-width: 400px !important;
+        }
+    }
+
+    footer{
+        margin: -20px;
     }
 }
